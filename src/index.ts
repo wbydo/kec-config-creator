@@ -32,22 +32,20 @@ const config: Config = {
     {
       description: 'Emacs Like Moves. 1',
       manipulators: [
-        ...arrowMappings.map(
-          (i): Manipulator => {
-            return {
-              type: 'basic',
-              from: {
-                key_code: i.alphabet,
-                modifiers: {
-                  mandatory: ['control'],
-                },
+        ...arrowMappings.map((i): Manipulator => {
+          return {
+            type: 'basic',
+            from: {
+              key_code: i.alphabet,
+              modifiers: {
+                mandatory: ['control'],
               },
-              to: {
-                key_code: i.arrow,
-              },
-            };
-          }
-        ),
+            },
+            to: {
+              key_code: i.arrow,
+            },
+          };
+        }),
         {
           type: 'basic',
           from: {
@@ -77,40 +75,36 @@ const config: Config = {
     {
       description: 'Emacs Like Moves. 2',
       manipulators: [
-        ...arrowMappings.map(
-          (i): Manipulator => {
-            return {
-              type: 'basic',
-              from: {
-                key_code: i.alphabet,
-                modifiers: {
-                  mandatory: ['command', 'shift'],
-                },
+        ...arrowMappings.map((i): Manipulator => {
+          return {
+            type: 'basic',
+            from: {
+              key_code: i.alphabet,
+              modifiers: {
+                mandatory: ['command', 'shift'],
               },
-              to: {
-                key_code: i.arrow,
-                modifiers: ['shift'],
+            },
+            to: {
+              key_code: i.arrow,
+              modifiers: ['shift'],
+            },
+          };
+        }),
+        ...arrowMappings.map((i): Manipulator => {
+          return {
+            type: 'basic',
+            from: {
+              key_code: i.alphabet,
+              modifiers: {
+                mandatory: ['command', 'control'],
               },
-            };
-          }
-        ),
-        ...arrowMappings.map(
-          (i): Manipulator => {
-            return {
-              type: 'basic',
-              from: {
-                key_code: i.alphabet,
-                modifiers: {
-                  mandatory: ['command', 'control'],
-                },
-              },
-              to: {
-                key_code: i.arrow,
-                modifiers: ['command'],
-              },
-            };
-          }
-        ),
+            },
+            to: {
+              key_code: i.arrow,
+              modifiers: ['command'],
+            },
+          };
+        }),
       ],
     },
   ],

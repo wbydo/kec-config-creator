@@ -2,31 +2,27 @@
   "name": "kecm-config-creator",
   "private": true,
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {},
   "devDependencies": {
-    "@types/node": "^14.14.25",
-    "@typescript-eslint/eslint-plugin": "^4.14.2",
-    "@typescript-eslint/parser": "^4.14.2",
-    "eslint": "^7.19.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "^2.2.1",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.1.3"
+    "@types/node": "^17.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "esbuild-register": "^3.3.1",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "npm-check-updates": "^12.1.0",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esbuild-register ./src/index.ts",
+    "update": "ncu -u"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wbydo/kecm-config-creator.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wbydo/kecm-config-creator/issues"
-  },
-  "homepage": "https://github.com/wbydo/kecm-config-creator#readme"
+  "author": "wbydo"
 }
