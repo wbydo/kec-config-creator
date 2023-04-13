@@ -72,41 +72,6 @@ const config: Config = {
         },
       ],
     },
-    {
-      description: 'Emacs Like Moves. 2',
-      manipulators: [
-        ...arrowMappings.map((i): Manipulator => {
-          return {
-            type: 'basic',
-            from: {
-              key_code: i.alphabet,
-              modifiers: {
-                mandatory: ['command', 'shift'],
-              },
-            },
-            to: {
-              key_code: i.arrow,
-              modifiers: ['shift'],
-            },
-          };
-        }),
-        ...arrowMappings.map((i): Manipulator => {
-          return {
-            type: 'basic',
-            from: {
-              key_code: i.alphabet,
-              modifiers: {
-                mandatory: ['command', 'control'],
-              },
-            },
-            to: {
-              key_code: i.arrow,
-              modifiers: ['command'],
-            },
-          };
-        }),
-      ],
-    },
   ],
 };
 
