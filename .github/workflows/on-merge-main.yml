@@ -1,9 +1,12 @@
 name: On merge main
 
-on:
-  push:
-    branches:
-      - main
+# TODO: 戻す
+# on:
+#   push:
+#     branches:
+#       - main
+
+on: push
 
 jobs:
   on-merge-main:
@@ -32,7 +35,8 @@ jobs:
           VERSION=$(cat package.json | jq -r '.version')
           TAG_NAME="v${VERSION}"
 
-          gh release create "${TAG_NAME}" -d -t "${TAG_NAME}" --target=main --generate-notes
+          #TODO: 戻す
+          echo gh release create "${TAG_NAME}" -d -t "${TAG_NAME}" --target=main --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload File
@@ -42,7 +46,8 @@ jobs:
           TAG_NAME="v${VERSION}"
           cp ./dist/{1234,${TAG_NAME}}.json
 
-          gh release upload "${TAG_NAME}" ./dist/${TAG_NAME}.json
+          #TODO: 戻す
+          echo gh release upload "${TAG_NAME}" ./dist/${TAG_NAME}.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
