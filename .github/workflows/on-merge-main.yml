@@ -62,6 +62,16 @@ jobs:
           path: dotfiles
 
       - run: |
+          # 再利用可能なワークフローを使うと共通化できそうだがとりあえずコピペ
+          VERSION=$(cat package.json | jq -r '.version')
+          TAG_NAME="v${VERSION}"
           cp ./dist/1234.json ./dotfiles/private_dot_config/private_karabiner/assets/complex_modifications/1234.json
           cd dotfiles
-          git status
+          git checkout -b "feature/update-karabinar-config-${TAG_NAME}"
+          git add ./private_dot_config/private_karabiner/assets/complex_modifications/1234.json
+          git commit -m "update karabinar config to ${TAG_NAME}"
+          echo gh pr create \
+            -a "@me" \
+            -r wbydo \
+            --base=develop \
+            -b "https://github.com/wbydo/kecm-config-creator/releases/tag/${TAG_NAME}"
