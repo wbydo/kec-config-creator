@@ -75,11 +75,11 @@ jobs:
           git checkout -b "feature/update-karabinar-config-${TAG_NAME}"
           git add ./private_dot_config/private_karabiner/assets/complex_modifications/1234.json
           git commit -m "update karabinar config to ${TAG_NAME}"
+          git push origin "feature/update-karabinar-config-${TAG_NAME}"
           gh pr create \
-            -a "@me" \
             -r wbydo \
             --base=develop \
+            -t "update karabinar config to ${TAG_NAME}" \
             -b "https://github.com/wbydo/kecm-config-creator/releases/tag/${TAG_NAME}"
-
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.my-app.outputs.token }}
