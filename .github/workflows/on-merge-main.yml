@@ -75,3 +75,5 @@ jobs:
             -r wbydo \
             --base=develop \
             -b "https://github.com/wbydo/kecm-config-creator/releases/tag/${TAG_NAME}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
