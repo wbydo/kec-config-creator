@@ -1,6 +1,9 @@
 name: On merge main
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   on-merge-main:
