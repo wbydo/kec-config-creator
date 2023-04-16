@@ -12,6 +12,13 @@ jobs:
   on-merge-main:
     runs-on: ubuntu-latest
     steps:
+      - name: Install App Token
+        id: my-app
+        uses: getsentry/action-github-app-token@v2
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -41,5 +48,15 @@ jobs:
 
           # TODO: 戻す
           echo gh release upload "${TAG_NAME}" ./dist/${TAG_NAME}.json
+
+          # TODO: 消す
+          pwd
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout dotfiles
+        uses: actions/checkout@v3
+        with:
+          repository: wbydo/dotfiles
+          token: ${{ steps.my-app.outputs.token }}
+          path: dotfiles
