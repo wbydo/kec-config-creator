@@ -30,3 +30,5 @@ jobs:
           VERSION=$(cat package.json | jq -r '.version')
           TAG_NAME="v${VERSION}"
           gh release upload "${TAG_NAME}" ./dist/1234.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
