@@ -82,7 +82,6 @@ jobs:
           git commit -m "update karabinar config to ${TAG_NAME}"
           git push origin "feature/update-karabinar-config-${TAG_NAME}"
           gh pr create \
-            -a "@me" \
             -r wbydo \
             --base=develop \
             -t "update karabinar config to ${TAG_NAME}" \
