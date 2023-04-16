@@ -75,7 +75,7 @@ jobs:
           git checkout -b "feature/update-karabinar-config-${TAG_NAME}"
           git add ./private_dot_config/private_karabiner/assets/complex_modifications/1234.json
           git commit -m "update karabinar config to ${TAG_NAME}"
-          git git push origin "feature/update-karabinar-config-${TAG_NAME}"
+          git push origin "feature/update-karabinar-config-${TAG_NAME}"
           gh pr create \
             -a "@me" \
             -r wbydo \
