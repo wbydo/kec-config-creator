@@ -70,7 +70,7 @@ jobs:
           # https://qiita.com/thaim/items/3d1a4d09ec4a7d8844ce
           # https://github.com/orgs/community/discussions/26560
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]
+          git config user.name "github-actions[bot]"
 
           cp ./dist/1234.json ./dotfiles/private_dot_config/private_karabiner/assets/complex_modifications/1234.json
           cd dotfiles
@@ -88,5 +88,6 @@ jobs:
             -r wbydo \
             --base=develop \
             -b "https://github.com/wbydo/kecm-config-creator/releases/tag/${TAG_NAME}"
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
