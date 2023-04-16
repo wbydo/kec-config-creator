@@ -21,7 +21,7 @@ jobs:
         run: |
           VERSION=$(cat package.json | jq -r '.version')
           TAG_NAME="v${VERSION}"
-          echo gh release create "${TAG_NAME}" -d -t "${TAG_NAME}"
+          gh release create "${TAG_NAME}" -d -t "${TAG_NAME}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload File
@@ -29,4 +29,4 @@ jobs:
           # 再利用可能なワークフローを使うと共通化できそうだがとりあえずコピペ
           VERSION=$(cat package.json | jq -r '.version')
           TAG_NAME="v${VERSION}"
-          echo gh release upload "${TAG_NAME}" ./dist/1234.json
+          gh release upload "${TAG_NAME}" ./dist/1234.json
