@@ -79,7 +79,7 @@ jobs:
             -a "@me" \
             -r wbydo \
             --base=develop \
-            -t "update karabinar config to ${TAG_NAME}"
+            -t "update karabinar config to ${TAG_NAME}" \
             -b "https://github.com/wbydo/kecm-config-creator/releases/tag/${TAG_NAME}"
 
         env:
