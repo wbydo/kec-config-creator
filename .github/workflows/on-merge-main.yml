@@ -24,7 +24,7 @@ jobs:
         run: |
           VERSION=$(cat package.json | jq -r '.version')
           TAG_NAME="v${VERSION}"
-          gh release create "${TAG_NAME}" -d -t "${TAG_NAME}"
+          gh release create "${TAG_NAME}" -d -t "${TAG_NAME}" --target=main --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload File
