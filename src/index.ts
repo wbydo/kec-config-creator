@@ -76,4 +76,4 @@ const config: Config = {
 };
 
 const fileName = '1234.json';
-fs.writeFileSync(`./dist/${fileName}`, JSON.stringify(config));
+fs.writeFileSync(`./dist/${fileName}`, JSON.stringify(config, null, 2));
